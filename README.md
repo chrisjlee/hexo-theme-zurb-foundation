@@ -1,27 +1,27 @@
-# Landscape
+# Zurb Foundation
 
-A brand new default theme for [Hexo].
+A brand new default theme for [Hexo]. This theme is <b>Work in progress</b>. It utilizes Zurb Foundation 5+.
 
-- [Preview](http://hexo.io/hexo-theme-landscape/)
+- [Preview](http://hexo.io/hexo-theme-zurb-foundation/)
 
 ## Installation
 
 ### Install
 
 ``` bash
-$ git clone https://github.com/hexojs/hexo-theme-landscape.git themes/landscape
+$ git clone https://github.com/chrisjlee/hexo-theme-zurb-foundation.git
 ```
 
-**Landscape requires Hexo 2.4 and above.**
+**Landscape requires Hexo 3.0 and above.**
 
 ### Enable
 
-Modify `theme` setting in `_config.yml` to `landscape`.
+Modify `theme` setting in `_config.yml` to `zurb-foundation`.
 
 ### Update
 
 ``` bash
-cd themes/landscape
+cd themes/zurb-foundation
 git pull
 ```
 
@@ -65,23 +65,9 @@ google_plus:
 - **twitter** - Twiiter ID
 - **google_plus** - Google+ ID
 
-## Features
+### Layouts
 
-### Fancybox
-
-Landscape uses [Fancybox] to showcase your photos. You can use Markdown syntax or fancybox tag plugin to add your photos.
-
-```
-![img caption](img url)
-
-{% fancybox img_url [img_thumbnail] [img_caption] %}
-```
-
-### Sidebar
-
-You can put your sidebar in left side, right side or bottom of your site by editing `sidebar` setting.
-
-Landscape provides 5 built-in widgets:
+Foundation provides 5 built-in widgets:
 
 - category
 - tag
@@ -96,16 +82,4 @@ All of them are enabled by default. You can edit them in `widget` setting.
 ### Requirements
 
 - [Grunt] 0.4+
-- Hexo 2.4+
-
-### Grunt tasks
-
-- **default** - Download [Fancybox] and [Font Awesome].
-- **fontawesome** - Only download [Font Awesome].
-- **fancybox** - Only download [Fancybox].
-- **clean** - Clean temporarily files and downloaded files.
-
-[Hexo]: http://zespia.tw/hexo/
-[Fancybox]: http://fancyapps.com/fancybox/
-[Font Awesome]: http://fontawesome.io/
-[Grunt]: http://gruntjs.com/
+- Hexo 3.0+
