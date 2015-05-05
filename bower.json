@@ -1,0 +1,19 @@
+{
+  "name": "zurb-foundation-theme",
+  "version": "0.1.0",
+  "authors": [
+    "Chris Lee <iam@chrisjlee.net>"
+  ],
+  "license": "MIT",
+  "homepage": "http://hire.chrisjlee.net",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation": "~5.5.2"
+  }
+}
