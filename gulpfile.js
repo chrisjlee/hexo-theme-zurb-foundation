@@ -7,19 +7,19 @@ var gulp        = require('gulp'),
 
 var src = {
     scss: 'scss/*.scss',
-    css:  'app/css',
-    html: 'app/*.html'
+    css:  'source/*.css',
+    ejs: 'layout/*.ejs'
 };
 
 // Static Server + watching scss/html files
 gulp.task('serve', ['sass'], function() {
 
     browserSync({
-        server: "../../"
+        server: "./"
     });
 
     gulp.watch(src.scss, ['sass']);
-    gulp.watch(src.html).on('change', reload);
+    gulp.watch(src.ejs).on('change', reload);
 });
 
 // Compile sass into CSS
@@ -32,7 +32,7 @@ gulp.task('sass', function() {
 
 gulp.task('bower', function() {
   return bower()
-    .pipe(gulp.dest('lib/'))
+    .pipe(gulp.dest('source/lib'))
 });
 
 gulp.task('default', ['serve']);
