@@ -3,7 +3,11 @@ var gulp        = require('gulp'),
     sass        = require('gulp-sass'),
     bower       = require('gulp-bower'),
     notify      = require('gulp-notify'),
-    reload      = browserSync.reload;
+    reload      = browserSync.reload,
+    bs          = require("browser-sync").create(),
+    Hexo = require('hexo'),
+    hexo = new Hexo(process.cwd(), {});
+
 
 var src = {
     scss: 'scss/*.scss',
@@ -14,12 +18,20 @@ var src = {
 // Static Server + watching scss/html files
 gulp.task('serve', ['sass'], function() {
 
-    browserSync({
-        server: "./"
+    debugger;
+    // .init starts the server
+    bs.init({
+        server: "../source"
     });
 
-    gulp.watch(src.scss, ['sass']);
-    gulp.watch(src.ejs).on('change', reload);
+    hexo.call('generate', {}).then(function(){
+      console.log('Generating Files');
+    });
+
+    // Now call methods on bs instead of the
+    // main browserSync module export
+    bs.reload("*.html");
+    bs.reload("*.css");
 });
 
 // Compile sass into CSS
