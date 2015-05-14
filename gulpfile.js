@@ -18,15 +18,14 @@ var src = {
 // Static Server + watching scss/html files
 gulp.task('serve', ['sass'], function() {
 
-    debugger;
-    // .init starts the server
+    // init starts the server
     bs.init({
-        server: "../source"
+        baseDir: "../../public"
     });
 
-    hexo.call('generate', {}).then(function(){
-      console.log('Generating Files');
-    });
+    // hexo.call('generate', {}).then(function(){
+    //   console.log('Generating Files');
+    // });
 
     // Now call methods on bs instead of the
     // main browserSync module export
