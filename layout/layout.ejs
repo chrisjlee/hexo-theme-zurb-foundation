@@ -1,22 +1,30 @@
 <%- partial('_partial/head') %>
 <body>
-  <div id="container">
+  <div id="container" class="page">
 
-    <div id="wrap">
+    <div>
       <%- partial('_partial/header', null, {cache: !config.relative_link}) %>
-      <div class="outer">
-        <section id="main"><%- body %></section>
+      <div class="l-main row">
+
+        <section id="main" class="<% if (theme.sidebar){ %>medium-8 large-8 columns<% } %>">
+          <%- body %>
+        </section>
+
         <% if (theme.sidebar && theme.sidebar !== 'bottom'){ %>
           <%- partial('_partial/sidebar', null, {cache: !config.relative_link}) %>
         <% } %>
+
       </div>
       <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
     </div>
+
     <%- partial('_partial/mobile-nav', null, {cache: !config.relative_link}) %>
+
     <%- partial('_partial/after-footer') %>
   </div>
-  <script type='text/javascript' id="__bs_script__">//<![CDATA[
+
+<script type='text/javascript' id="__bs_script__">//<![CDATA[
     document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.2.6.11.js'><\/script>".replace("HOST", location.hostname));
 //]]></script>
-</body>
-</html>
+
+</body></html>
