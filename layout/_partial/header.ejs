@@ -1,5 +1,6 @@
 <header class="l-header">
   <div class="l-banner"></div>
+
   <div class="contain-to-grid sticky">
 
       <nav id="main-nav" class="top-bar">
@@ -31,15 +32,21 @@
         </section>
       </nav>
 
-      <nav id="sub-nav">
+      <ul id="sub-nav" class="left">
+        <li>
         <% if (theme.rss){ %>
           <a id="nav-rss-link" class="nav-icon" href="<%- theme.rss %>" title="RSS Feed"></a>
         <% } %>
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <%- search_form({button: '&#xF002;'}) %>
-      </div>
+        </li>
+
+        <li class="has-form" id="search-form-wrap">
+          <div class="row collapse">
+            <div class="large-8 columns"><%- search_form({button: '&#xF002;'}) %></div>
+            <div class="large-4 columns"><a  id="nav-search-btn" class="nav-icon" title="Search"></a></div>
+          </div>
+        </li>
+      </ul>
     </div>
+
   </div>
 </header>

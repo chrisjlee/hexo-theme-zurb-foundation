@@ -1,4 +1,4 @@
-<aside id="sidebar"<% if (theme.sidebar === 'bottom'){ %> class="outer"<% } %>>
+<aside id="sidebar"<% if (theme.sidebar === 'bottom'){ %> class="large-4 columns"<% } %>>
   <% theme.widgets.forEach(function(widget){ %>
     <%- partial('_widget/' + widget) %>
   <% }) %>
