@@ -30,7 +30,7 @@
             <% } %>
           </ul>
         </section>
-      </nav>
+
 
       <ul id="sub-nav" class="left">
         <li>
@@ -39,14 +39,18 @@
         <% } %>
         </li>
 
-        <li class="has-form" id="search-form-wrap">
+        <li class="has-form">
           <div class="row collapse">
-            <div class="large-8 columns"><%- search_form({button: '&#xF002;'}) %></div>
-            <div class="large-4 columns"><a  id="nav-search-btn" class="nav-icon" title="Search"></a></div>
+            <div class="small-9 large-8 columns"><%- search_form({button: 'Search', class: 'large-4 columns'}) %></div>
+
           </div>
         </li>
       </ul>
+
+      </nav>
+
     </div>
 
   </div>
 </header>
+
