@@ -20,7 +20,7 @@ gulp.task('serve', ['sass'], function() {
 
     // init starts the server
     bs.init({
-        baseDir: "/home/chris/workspace/zurb-foundation-hexo-theme/public"
+        baseDir: "../../public"
     });
 
     // hexo.call('generate', {}).then(function(){
