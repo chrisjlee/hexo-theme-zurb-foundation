@@ -10,9 +10,9 @@ var gulp        = require('gulp'),
 
 
 var src = {
-    scss: 'scss/*.scss',
-    css:  'source/*.css',
-    ejs: 'layout/*.ejs'
+    scss: 'scss',
+    css:  'source/css',
+    ejs: 'layout'
 };
 
 // Static Server + watching scss/html files
