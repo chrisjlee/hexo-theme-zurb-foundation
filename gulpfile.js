@@ -35,9 +35,9 @@ gulp.task('serve', ['sass'], function() {
 
 // Compile sass into CSS
 gulp.task('sass', function() {
-    gulp.src('./sass/**/*.scss')
+    gulp.src(src.scss)
         .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest(css))
+        .pipe(gulp.dest(src.css))
         .pipe(reload({stream: true}));
 });
 
