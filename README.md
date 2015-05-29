@@ -79,6 +79,18 @@ All of them are enabled by default. You can edit them in `widget` setting.
 
 ## Development
 
+Go ahead and use browser sync:
+
+```
+browser-sync start --server='../../public' --files="public/*.html,public/*.css"
+```
+
+In order to get started with hexo use gulp.
+
+```
+hexo generate --watch
+```
+
 ### Requirements
 
 - [Grunt] 0.4+
