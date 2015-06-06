@@ -13,24 +13,25 @@ var src = {
     scss: './scss/',
     css:  './source/css',
     ejs: 'layout'
-};
+},
+watchFiles = [
+    './scss/*.scss',
+    '*/*.ejs'
+];
 
 // Static Server + watching scss/html files
-gulp.task('serve', ['sass'], function() {
+gulp.task('serve', ['sass:watch'], function() {
 
     // init starts the server
-    bs.init({
-        baseDir: "../../public"
+    bs.init(watchFiles, {
+        server: {
+            baseDir: "../../public"
+        },
+        logLevel: "debug"
     });
 
-    // hexo.call('generate', {}).then(function(){
-    //   console.log('Generating Files');
-    // });
+    hexo.init();
 
-    // Now call methods on bs instead of the
-    // main browserSync module export
-    bs.reload("*.html");
-    bs.reload("*.css");
 });
 
 // Compile sass into CSS
@@ -39,7 +40,7 @@ gulp.task('sass', function() {
     gulp.src(src.scss + "{,*}/*.scss")
         .pipe(sass({}))
         // .pipe(gulp.dest(src.css))
-        .pipe(gulp.dest('./css/'))
+        .pipe(gulp.dest('../../source/css/'))
         .pipe(reload({stream: true}));
 });
 
