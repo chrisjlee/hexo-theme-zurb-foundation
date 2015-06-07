@@ -32,6 +32,11 @@ gulp.task('serve', ['sass:watch'], function() {
 
     hexo.init();
 
+    hexo.call('generate', {}, function(){
+    }).then(function(){
+        reload({stream: true});
+    });
+
 });
 
 // Compile sass into CSS
