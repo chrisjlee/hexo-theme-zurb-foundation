@@ -1,5 +1,8 @@
 <%- partial('_partial/head') %>
 <body>
+<div class="off-canvas-wrap" data-offcanvas>
+  <div class="inner-wrap">
+
 
   <div id="container" class="page">
 
@@ -16,11 +19,14 @@
         <% } %>
 
       </div>
+
+      <%- partial('_partial/mobile-nav', null, {cache: !config.relative_link}) %>
+
       <hr />
       <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
     </div>
 
-    <%- partial('_partial/mobile-nav', null, {cache: !config.relative_link}) %>
+
 
     <%- partial('_partial/after-footer') %>
   </div>
@@ -31,4 +37,6 @@
     document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.2.6.11.js'><\/script>".replace("HOST", location.hostname));
 //]]></script>
 <!-- /Enable Browser Sync -->
+
+</div></div> <!--OffCanvas Div's-->
 </body></html>

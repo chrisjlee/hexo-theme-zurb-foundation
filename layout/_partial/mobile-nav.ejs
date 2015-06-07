@@ -1,5 +1,10 @@
-<nav id="mobile-nav" class="show-for-small-only">
+<nav id="mobile-nav" class="right-off-canvas-menu">
+  <hr />
+  <ul class="off-canvas-list">
   <% for (var i in theme.menu){ %>
-    <a href="<%- url_for(theme.menu[i]) %>" class="mobile-nav-link"><%= i %></a>
+    <li role="menuitem">
+      <a href="<%- url_for(theme.menu[i]) %>" class="mobile-nav-link"><%= i %></a>
+    </li>
   <% } %>
+  </ul>
 </nav>

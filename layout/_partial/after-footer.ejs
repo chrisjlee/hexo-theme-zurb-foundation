@@ -14,10 +14,16 @@
 </script>
 <% } %>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js">
+</script>
 
-<%- js(['lib/foundation/js/foundation', 'lib/foundation/js/foundation/foundation.topbar']) %>
-<%- js('js/script') %>
+<%- js([
+  'lib/foundation/js/foundation',
+  'lib/foundation/js/foundation/foundation.topbar',
+  'lib/foundation/js/foundation/foundation.offcanvas'
+  ]) %>
 <script>
 $(document).foundation();
 </script>
+<%- js('js/script') %>
+
