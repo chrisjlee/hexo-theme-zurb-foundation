@@ -34,8 +34,7 @@
         </section>
 
 
-
-      <ul id="sub-nav" class="left">
+      <ul id="nav-search-form" class="left">
         <li>
         <% if (theme.rss){ %>
           <a id="nav-rss-link" class="nav-icon" href="<%- theme.rss %>" title="RSS Feed"></a>
@@ -44,7 +43,7 @@
 
         <li class="has-form">
           <div class="row collapse">
-            <%- search_form({button: 'Search', class: ''}) %>
+            <%- partial('_widget/search') %>
           </div>
         </li>
       </ul>
