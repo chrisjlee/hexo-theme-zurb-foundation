@@ -1,0 +1,11 @@
+<div class="l-search">
+  <form class="row collapse" action="//google.com/search" method="get" accept-charset="utf-8">
+    <div class="large-8 small-9 columns">
+      <input type="search" name="q" results="0" placeholder="<%= __('search') %>">
+    </div>
+    <div class="large-4 small-3 columns">
+      <button href="#" class="button expand">Search</button>
+    </div>
+    <input type="hidden" name="q" value="site:<%- config.url.replace(/^https?:\/\//, '') %>">
+  </form>
+</div>
