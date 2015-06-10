@@ -5,9 +5,8 @@ var gulp        = require('gulp'),
     notify      = require('gulp-notify'),
     reload      = browserSync.reload,
     bs          = require("browser-sync").create(),
-    Hexo = require('hexo'),
-    hexo = new Hexo(process.cwd(), {});
-
+    Hexo        = require('hexo'),
+    hexo        = new Hexo(process.cwd(), {});
 
 var src = {
     scss: './scss/',
@@ -19,8 +18,15 @@ watchFiles = [
     '*/*.ejs'
 ];
 
+
 // Static Server + watching scss/html files
 gulp.task('serve', ['sass:watch'], function() {
+
+    hexo.init.then(function(){
+      return hexo.call('generate', {watch: true});
+    }).catch(function(err){
+      console.log(err);
+    });
 
     // init starts the server
     bs.init(watchFiles, {
@@ -30,14 +36,15 @@ gulp.task('serve', ['sass:watch'], function() {
         logLevel: "debug"
     });
 
-    hexo.init();
-
-    hexo.call('generate', {}, function(){
-    }).then(function(){
-        reload({stream: true});
+    hexo.init.then(function(){
+      return hexo.call('generate', {watch: true});
+    }).catch(function(err){
+      console.log(err);
     });
 
 });
+
+
 
 // Compile sass into CSS
 gulp.task('sass', function() {
@@ -52,6 +59,7 @@ gulp.task('sass', function() {
 gulp.task('sass:watch', function () {
   gulp.watch('./scss/**/*.scss', ['sass']);
 });
+
 
 gulp.task('bower', function() {
   return bower()
