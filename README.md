@@ -3,6 +3,7 @@
 A brand new default theme for [Hexo]. This theme is <b>Work in progress</b>. It utilizes Zurb Foundation 5+.
 
 - [Preview](http://hexo.io/hexo-theme-zurb-foundation/)
+- [Demo](http://chrisjlee.github.io/hexo-theme-zurb-foundation/)
 
 ## Installation
 
