@@ -11,6 +11,7 @@
     "node-inspector": "^0.10.1"
   },
   "scripts": {
-    "setup": "bower install && gulp install"
+    "setup": "bower install && gulp install",
+    "deploy": "cp -rfv ../../public . && git subtree push --prefix dist origin gh-pages"
   }
 }
