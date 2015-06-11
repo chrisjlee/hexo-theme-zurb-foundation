@@ -6,7 +6,8 @@ var gulp        = require('gulp'),
     reload      = browserSync.reload,
     bs          = require("browser-sync").create(),
     Hexo        = require('hexo'),
-    hexo        = new Hexo(process.cwd(), {});
+    hexo        = new Hexo(process.cwd(), {}),
+    clean = require('gulp-clean');
 
 var src = {
     scss: './scss/',
@@ -42,6 +43,21 @@ gulp.task('serve', ['sass:watch'], function() {
       console.log(err);
     });
 
+});
+
+
+
+gulp.task('build', ['clean', 'copy']);
+
+gulp.task('copy', function (cb) {
+    gulp.src(['../../public/**/*'])
+        .pipe(gulp.dest('public'));
+
+});
+
+gulp.task('clean', function () {
+    return gulp.src('public', {read: false})
+            .pipe(clean({force: true}))
 });
 
 
