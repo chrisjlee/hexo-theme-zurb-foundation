@@ -1,0 +1,12 @@
+.widget .archive-list-count {
+  display: none; }
+
+time {
+  text-transform: uppercase; }
+
+.article-datetime {
+  text-transform: uppercase; }
+
+.article-footer {
+  border-top: 1px solid #eee;
+  background: #fc0; }
